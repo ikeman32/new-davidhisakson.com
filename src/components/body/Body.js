@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 const Container =styled(Box)({
     display: 'flex',
     backgroundColor: '#3F4045',
-    padding: '293px',
+    padding: '294px',
   });
 
 function Body() {
