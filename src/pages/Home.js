@@ -116,7 +116,7 @@ function Home() {
                 </Badge1>
                 <Badge>
                     <a href='https://lambdaschool.com/' target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#056676' }}>
-                        <img src={'https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5dcda59e63bb6ae5c9282801_small-red-logo.png'} style={{ maxWidth: '50%', marginLeft: '1rem' }} />
+                        <img src={'https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5dcda59e63bb6ae5c9282801_small-red-logo.png'} style={{ maxWidth: '50%', marginLeft: '1rem' }} alt=''/>
                     </a>
                 </Badge>
                 <InfoOutlinedIcon style={{ marginTop: '1rem', marginLeft: '1rem', color: '#056676' }} fontSize='large' />
