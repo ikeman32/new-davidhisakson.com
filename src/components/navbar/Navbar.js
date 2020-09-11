@@ -1,43 +1,71 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
+import { Box, MenuList, MenuItem, Avatar, Tooltip } from '@material-ui/core/';
+import HomeIcon from '@material-ui/icons/Home';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import CodeIcon from '@material-ui/icons/Code';
+import DescriptionIcon from '@material-ui/icons/Description';
+
+import { me } from '../Assets';
 
 const Navigation = styled(Box)({
     display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: '#3F4045',
-    padding: '15px',
+    backgroundColor: '#c9c9c9;',
+    width: '100%',
+    paddingBottom: '15px',
+    top: 0
 });
 
 const Bar = styled(Box)({
     // border: '1px solid white',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     justifyItems: 'center',
     maxHeight: '100%',
-    width: '80%',
-    color: 'whitesmoke',
-    padding: '0 8px'
+    width: '100%',
+    backgroundColor: '#bbd196',
+    color: '#056676',
+    paddingtop: '0 8px'
+});
+
+const Avatars = styled(Box)({
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '30%',
+    marginRight: '10px'
 })
+
+
 
 function Navbar() {
     return (
         <Navigation>
             <Bar>
-                <MenuList style={{ display: 'flex', maxWidth: '100%' }}>
+                <Avatars>
+                    <Avatar src={me} />
+                    <h2>David H Isakson II</h2>
+                </Avatars>
+                <MenuList style={{ display: 'flex', width: '40%' }}>
                     <MenuItem>
-                        Home
+                        <Tooltip title='Home' arrow>
+                            <HomeIcon fontSize='large' />
+                        </Tooltip>
                     </MenuItem>
-                    <MenuItem style={{marginLeft: '1rem'}}>
-                        Projects
+                    <MenuItem style={{ marginLeft: '1rem' }}>
+                        <Tooltip title='About Me' arrow>
+                            <InfoOutlinedIcon fontSize='large' />
+                        </Tooltip>
                     </MenuItem>
-                    <MenuItem style={{marginLeft: '1rem'}}>
-                        About
+                    <MenuItem style={{ marginLeft: '1rem' }}>
+                        <Tooltip title='Projects' arrow>
+                            <CodeIcon fontSize='large' />
+                        </Tooltip>
                     </MenuItem>
-                    <MenuItem style={{marginLeft: '1rem'}}>
-                        Blog
+                    <MenuItem style={{ marginLeft: '1rem' }}>
+                        <Tooltip title='Blog' arrow>
+                            <DescriptionIcon fontSize='large' />
+                        </Tooltip>
                     </MenuItem>
                 </MenuList>
             </Bar>
