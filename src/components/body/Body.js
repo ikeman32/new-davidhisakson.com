@@ -4,8 +4,9 @@ import Box from '@material-ui/core/Box';
 
 const Container =styled(Box)({
     display: 'flex',
-    backgroundColor: '#3F4045',
-    padding: '294px',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: '#c9c9c9',
   });
 
 function Body() {
