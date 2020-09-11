@@ -1,13 +1,17 @@
 import React from 'react';
 import { Navbar, Footer, Body } from './components';
+import './App.css';
 
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Navbar />
-      <Body />
-      <Footer />
+      <div className='app_body'>
+        <Body />
+        
+      </div>
+      <Footer className='footer' />
     </div>
   );
 }

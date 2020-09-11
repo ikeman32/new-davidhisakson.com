@@ -1,0 +1,14 @@
+.app{
+    background-color: #c9c9c9;
+    
+}
+
+.app_body{
+    display: flex;
+    background-color: #c9c9c9;
+    height: 84vh;
+}
+
+.app > .footer{
+    bottom: 0;
+}
