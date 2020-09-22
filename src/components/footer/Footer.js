@@ -1,34 +1,53 @@
-import React from 'react';
-import { styled } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
+import * as React from 'react';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 
-const Footers = styled(Box)({
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: '#bbd196',
-    paddingTop: '15px',
-    paddingBottom: '15px',
-    width: '100%',
-});
-const Bar = styled(Box)({
-    // border: '1px solid white',
-    display: 'flex',
-    justifyContent: 'center',
-    maxHeight: '20%',
-    width: '100%',
-    color: '#056676',
-})
-
-function Footer() {
+function Copyright() {
     return (
-        <Footers>
-            <Bar>
-                <Box component='h3'>
-                    Copyright © 2020 <strong style={{marginLeft: '1rem'}}>David H Isakson II</strong>
-                </Box>
-            </Bar>
-        </Footers>
-    )
+        <Typography variant="body2" color="#056676" style={{fontSize: '1.2rem'}}>
+            {'Copyright © '}
+            <Link color="inherit" href="https://davidhisakson.com">
+                davidhisakson.com
+      </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
 }
 
-export default Footer
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        // minHeight: '100vh',
+    },
+    main: {
+        marginTop: theme.spacing(8),
+        marginBottom: theme.spacing(2),
+    },
+    footer: {
+        padding: theme.spacing(3, 2),
+        marginTop: 'auto',
+        backgroundColor: '#bbd196',
+        color: '#056676',
+        textAlign: 'center',
+    },
+}));
+
+export default function Footer() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
+            <footer className={classes.footer}>
+                <Container maxWidth="sm">
+                    <Typography variant="body1">
+                        <Copyright />
+                    </Typography>
+                </Container>
+            </footer>
+        </div>
+    );
+}
