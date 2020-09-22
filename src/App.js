@@ -3,7 +3,7 @@ import { Navbar, Footer, Routes} from './components';
 import { styled } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
-const App_body = styled(Box)({
+const Appbody = styled(Box)({
   display: 'flex',
   justifyContent: 'center'
 })
@@ -13,10 +13,10 @@ function App() {
   return (
     <div className='app'>
       <Navbar />
-      <App_body>
+      <Appbody>
         <Routes />
         
-      </App_body>
+      </Appbody>
       <Footer className='footer' />
     </div>
   );
