@@ -10,16 +10,18 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
 const AboutMe = styled(Card)({
     borderRadius: '1rem',
-    width: '18%',
-    height: '60%',
-    marginRight: '6rem'
+    width: '280px',
+    height: '410px',
+    marginRight: '6rem',
+    marginBottom: '2rem'
 });
 
 const GitHubStats = styled(Card)({
     borderRadius: '1rem',
-    width: '30%',
-    height: '26%',
-    margin: 'auto 0'
+    width: '450px',
+    height: '190px',
+    margin: 'auto 0',
+    marginLeft: '2rem'
 });
 
 const TechStack = styled(Card)({
@@ -27,9 +29,9 @@ const TechStack = styled(Card)({
     display: 'flex',
     flexDirection: 'column',
     width: '80%',
-    height: '30%',
+    height: '200px',
     marginTop: '1rem',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
 });
 
 const Container = styled(Box)({

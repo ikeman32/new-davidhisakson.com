@@ -5,6 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
+import { Link } from 'react-router-dom';
 
 import { me } from '../Assets';
 
@@ -25,7 +26,8 @@ const Bar = styled(Box)({
     width: '100%',
     backgroundColor: '#bbd196',
     color: '#056676',
-    paddingtop: '0 8px'
+    paddingtop: '0 8px',
+    marginBottom: '2rem'
 });
 
 const Avatars = styled(Box)({
@@ -49,22 +51,30 @@ function Navbar() {
                 <MenuList style={{ display: 'flex', width: '40%' }}>
                     <MenuItem>
                         <Tooltip title='Home' arrow>
-                            <HomeIcon fontSize='large' />
+                            <Link to='/'>
+                                <HomeIcon fontSize='large' />
+                            </Link>
                         </Tooltip>
                     </MenuItem>
                     <MenuItem style={{ marginLeft: '1rem' }}>
                         <Tooltip title='About Me' arrow>
-                            <InfoOutlinedIcon fontSize='large' />
+                            <Link to='/About'>
+                                <InfoOutlinedIcon fontSize='large' />
+                            </Link>
                         </Tooltip>
                     </MenuItem>
                     <MenuItem style={{ marginLeft: '1rem' }}>
                         <Tooltip title='Projects' arrow>
-                            <CodeIcon fontSize='large' />
+                            <Link to='/Projects'>
+                                <CodeIcon fontSize='large' />
+                            </Link>
                         </Tooltip>
                     </MenuItem>
                     <MenuItem style={{ marginLeft: '1rem' }}>
                         <Tooltip title='Blog' arrow>
-                            <DescriptionIcon fontSize='large' />
+                            <Link to='/Blog'>
+                                <DescriptionIcon fontSize='large' />
+                            </Link>
                         </Tooltip>
                     </MenuItem>
                 </MenuList>
