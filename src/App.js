@@ -5,13 +5,14 @@ import { Box } from '@material-ui/core';
 
 const Appbody = styled(Box)({
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  minHeight: '73vh'
 })
 
 
 function App() {
   return (
-    <div className='app'>
+    <div className='app' >
       <Navbar />
       <Appbody>
         <Routes />

@@ -6,7 +6,8 @@ const Container = styled(Box)({
     display: 'flex',
     justifyContent: 'center',
     justifyItems: 'center',
-    width: '90%',
+    width: '2550px',
+    height: '3300 px'
 });
 
 function About() {
