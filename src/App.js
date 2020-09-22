@@ -1,17 +1,22 @@
 import React from 'react';
-import { Navbar, Footer} from './components';
-import { Home } from './pages'
-import './App.css';
+import { Navbar, Footer, Routes} from './components';
+import { styled } from '@material-ui/core/styles';
+import { Box } from '@material-ui/core';
+
+const App_body = styled(Box)({
+  display: 'flex',
+  justifyContent: 'center'
+})
 
 
 function App() {
   return (
     <div className='app'>
       <Navbar />
-      <div className='app_body'>
-        <Home />
+      <App_body>
+        <Routes />
         
-      </div>
+      </App_body>
       <Footer className='footer' />
     </div>
   );
