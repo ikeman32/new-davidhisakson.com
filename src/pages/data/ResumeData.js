@@ -1,4 +1,4 @@
-const header = {
+const header = [{
     name: 'David H Isakson II',
     title: 'Full Stack Developer',
     email: 'david.isakson.ii@gmail.com',
@@ -7,20 +7,22 @@ const header = {
     location: 'Moses Lake, WA 98837',
     linkedin: 'https://www.linkedin.com/in/david-h-isakson-ii/',
     github: 'https://github.com/ikeman32/'
-};
+}];
 
-const summary = '';
+const summary = 'US Army Veteran with training as a Full Stack Developer and experience using React for frontend development and Nodejs for backend development using Express and Knex frameworks. ';
 
 const edu = [
     {
+        id: 0,
         school: 'Lambda School',
         from: '09/2019',
         to: '07/2020',
-        degree: 'Other',
+        degree: '',
         major: 'Full Stack Web Development',
     },
     {
-        school: 'Wenatchee Valley College',
+        id: 1,
+        school: 'Wenatchee VC',
         from: '08/1999',
         to: '06/2001',
         degree: 'Associates',
