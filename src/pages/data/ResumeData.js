@@ -30,30 +30,25 @@ const edu = [
     },
 ];
 
-const skills =[
-    {
-        type: 'Web Development',
-        skill: [
-            'React', 
-            'Node.js', 
-            'Python', 
-            'LESS/SASS', 
-            'CSS', 
-            'HTML', 
-            'JavaScript', 
-            'SQL', 
-            'JSON', 
-            'Git', 
-            'Linux', 
-            'Redux', 
-            'Express.js', 
-            'Electron.js', 
-            'Agile Program Management', 
-            'Algorithms', 
-            'Asynchronous Javascript' , 
-            'Graphs'
-        ]
-    }
+const skills = [
+    'React',
+    'Node.js',
+    'Python',
+    'LESS/SASS',
+    'CSS',
+    'HTML',
+    'JavaScript',
+    'SQL',
+    'JSON',
+    'Git',
+    'Linux',
+    'Redux',
+    'Express.js',
+    'Electron.js',
+    'Agile',
+    'Algorithms',
+    'Async JS',
+    'Graphs'
 ];
 
 const workExp = [
@@ -67,7 +62,7 @@ const workExp = [
             'Maintain buildings and grounds for company clients',
             'Deploy saftey equipment as needed',
             'Restock supplies'
-        
+
         ],
     },
     {
@@ -131,7 +126,7 @@ const projects = [
     },
 ]
 
-export{
+export {
     header,
     summary,
     edu,

@@ -63,6 +63,9 @@ const useStyles = makeStyles({
     ets: {
         paddingLeft: '10px',
         fontWeight: 'bold'
+    },
+    sk: {
+        marginLeft: '10px',
     }
 });
 
@@ -126,6 +129,15 @@ const Et = styled(Card)({
 
 const Eb = styled(Card)({
     boxShadow: 'none',
+});
+
+const Skill = styled(Card)({
+    display: 'flex',
+    flexWrap: 'wrap',
+    boxShadow: 'none',
+    margin: '0 auto',
+    width: '98%',
+    // border: '1px solid blue',
 })
 
 const Summary = styled(Card)({
@@ -138,6 +150,9 @@ function Resume() {
         <div className={styles.paper}>
             <HeaderCard />
             <TopCard />
+            <div style={{ marginTop: '10px' }}>
+                <SkillsCard />
+            </div>
         </div>
     )
 }
@@ -201,13 +216,13 @@ function TopCard() {
     return (
         <Top>
             <div className={styles.tcl}>
-                <div style={{backgroundColor: '#e6ebeb', marginBottom: '15px',marginLeft: '10px'}}>
+                <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px', marginLeft: '10px' }}>
                     <h2>Education</h2>
                 </div>
                 <EduCard />
             </div>
             <div className={styles.tcr}>
-                <div style={{backgroundColor: '#e6ebeb', marginBottom: '15px'}}>
+                <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
                     <h2>Summary</h2>
                 </div>
                 <SummaryCard />
@@ -249,6 +264,26 @@ function EduCard() {
     });
 
     return education;
+}
+
+function SkillsCard() {
+    const style = useStyles();
+    const skill = skills.map(item => {
+        return (
+            <Typography variant='button' className={style.sk}>
+                {item}
+            </Typography>
+        );
+    });
+    return (
+        <div style={{marginRight: '20px', marginLeft: '20px'}}>
+            <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
+                <h2>Summary</h2>
+            </div>
+            <Skill>{skill}</Skill>
+        </div>
+    )
+
 }
 
 function SummaryCard() {
