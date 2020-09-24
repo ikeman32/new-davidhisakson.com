@@ -164,6 +164,9 @@ function Resume() {
             <div style={{ marginTop: '10px' }}>
                 <EmploymentCard />
             </div>
+            <div style={{ marginTop: '10px' }}>
+                <ProjectCard />
+            </div>
         </div>
     )
 }
@@ -228,13 +231,13 @@ function TopCard() {
         <Top>
             <div className={styles.tcl}>
                 <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px', marginLeft: '10px' }}>
-                    <h2>Education</h2>
+                    <h2 style={{color: '#056676', marginLeft:'15px'}}>Education</h2>
                 </div>
                 <EduCard />
             </div>
             <div className={styles.tcr}>
                 <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
-                    <h2>Summary</h2>
+                    <h2 style={{color: '#056676', marginLeft:'15px'}}>Summary</h2>
                 </div>
                 <SummaryCard />
             </div>
@@ -289,7 +292,7 @@ function SkillsCard() {
     return (
         <div style={{ marginRight: '20px', marginLeft: '20px' }}>
             <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
-                <h2>Summary</h2>
+                <h2 style={{color: '#056676', marginLeft:'15px'}}>Summary</h2>
             </div>
             <Skill>{skill}</Skill>
         </div>
@@ -298,12 +301,12 @@ function SkillsCard() {
 }
 
 function EmploymentCard() {
-    const style = useStyles();
+    // const style = useStyles();
     const work = workExp.map(item => {
         return (
             <Employ>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography style={{fontWeight: 'bold'}}>
+                    <Typography style={{ fontWeight: 'bold' }}>
                         {item.company}
                     </Typography>
                     <Typography>
@@ -311,7 +314,7 @@ function EmploymentCard() {
                     </Typography>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography style={{color: 'GrayText'}}>
+                    <Typography style={{ color: 'GrayText' }}>
                         {item.position}
                     </Typography>
                     <Typography>
@@ -320,8 +323,8 @@ function EmploymentCard() {
                 </div>
                 <Typography>
                     <ul>
-                        {item.desc.map(e =>{
-                            return(<li>{e}</li>)
+                        {item.desc.map(e => {
+                            return (<li>{e}</li>)
                         })}
                     </ul>
                 </Typography>
@@ -331,7 +334,7 @@ function EmploymentCard() {
     return (
         <div style={{ marginRight: '20px', marginLeft: '20px' }}>
             <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
-                <h2>Employment</h2>
+                <h2 style={{color: '#056676', marginLeft:'15px'}}>Employment</h2>
             </div>
             {work}
         </div>
@@ -339,25 +342,39 @@ function EmploymentCard() {
 
 }
 
-// function ProjectCard() {
-//     const style = useStyles();
-//     const proj = projects.map(item => {
-//         return (
-//             <Typography variant='button' className={style.sk}>
-//                 {item}
-//             </Typography>
-//         );
-//     });
-//     return (
-//         <div style={{marginRight: '20px', marginLeft: '20px'}}>
-//             <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
-//                 <h2>Summary</h2>
-//             </div>
-//             <Skill>{skill}</Skill>
-//         </div>
-//     )
+function ProjectCard() {
+    // const style = useStyles();
+    const proj = projects.map(item => {
+        return (
+            <Proj>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography>
+                        <a href={item.web} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#056676' }}> {item.name}</a>
+                    </Typography>
+                    <Typography>
+                        {item.from + ' to ' + item.to}
+                    </Typography>
+                </div>
+                <Typography>
+                    <ul>
+                        {item.desc.map(e => {
+                            return (<li>{e}</li>)
+                        })}
+                    </ul>
+                </Typography>
+            </Proj>
+        );
+    });
+    return (
+        <div style={{ marginRight: '20px', marginLeft: '20px' }}>
+            <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
+                <h2 style={{color: '#056676', marginLeft:'15px'}}>Projects</h2>
+            </div>
+            {proj}
+        </div>
+    )
 
-// }
+}
 
 function SummaryCard() {
     const mySummary = summary;
