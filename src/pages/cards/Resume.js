@@ -138,6 +138,14 @@ const Skill = styled(Card)({
     margin: '0 auto',
     width: '98%',
     // border: '1px solid blue',
+});
+
+const Employ = styled(Card)({
+    boxShadow: 'none',
+});
+
+const Proj = styled(Card)({
+    boxShadow: 'none',
 })
 
 const Summary = styled(Card)({
@@ -152,6 +160,9 @@ function Resume() {
             <TopCard />
             <div style={{ marginTop: '10px' }}>
                 <SkillsCard />
+            </div>
+            <div style={{ marginTop: '10px' }}>
+                <EmploymentCard />
             </div>
         </div>
     )
@@ -276,7 +287,7 @@ function SkillsCard() {
         );
     });
     return (
-        <div style={{marginRight: '20px', marginLeft: '20px'}}>
+        <div style={{ marginRight: '20px', marginLeft: '20px' }}>
             <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
                 <h2>Summary</h2>
             </div>
@@ -285,6 +296,68 @@ function SkillsCard() {
     )
 
 }
+
+function EmploymentCard() {
+    const style = useStyles();
+    const work = workExp.map(item => {
+        return (
+            <Employ>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography style={{fontWeight: 'bold'}}>
+                        {item.company}
+                    </Typography>
+                    <Typography>
+                        {item.location}
+                    </Typography>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography style={{color: 'GrayText'}}>
+                        {item.position}
+                    </Typography>
+                    <Typography>
+                        {item.from + ' to ' + item.to}
+                    </Typography>
+                </div>
+                <Typography>
+                    <ul>
+                        {item.desc.map(e =>{
+                            return(<li>{e}</li>)
+                        })}
+                    </ul>
+                </Typography>
+            </Employ>
+        );
+    });
+    return (
+        <div style={{ marginRight: '20px', marginLeft: '20px' }}>
+            <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
+                <h2>Employment</h2>
+            </div>
+            {work}
+        </div>
+    )
+
+}
+
+// function ProjectCard() {
+//     const style = useStyles();
+//     const proj = projects.map(item => {
+//         return (
+//             <Typography variant='button' className={style.sk}>
+//                 {item}
+//             </Typography>
+//         );
+//     });
+//     return (
+//         <div style={{marginRight: '20px', marginLeft: '20px'}}>
+//             <div style={{ backgroundColor: '#e6ebeb', marginBottom: '15px' }}>
+//                 <h2>Summary</h2>
+//             </div>
+//             <Skill>{skill}</Skill>
+//         </div>
+//     )
+
+// }
 
 function SummaryCard() {
     const mySummary = summary;
