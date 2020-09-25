@@ -10,11 +10,21 @@ const Project = styled(Card)({
     flex: '0 32%',
     flexDirection: 'column',
     borderRadius: '1rem',
-    height: '420px',
+    height: '580px',
     paddingTop: '20px',
     paddingBottom: '20px',
     marginBottom: '2%'
 });
+
+const ResponsiveProject = styled(Card)({
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: '1rem',
+    height: '630px',
+    paddingTop: '20px',
+    paddingBottom: '20px',
+    marginBottom: '4%',
+})
 
 const useStyles = makeStyles({
     name: {
@@ -24,6 +34,12 @@ const useStyles = makeStyles({
     description: {
         padding: '20px',
         textAlign: 'justify',
+        fontSize: '1.3rem'
+    },
+    resDesc:{
+        padding: '20px',
+        textAlign: 'justify',
+        fontSize: '1.4rem'
     },
     links: {
         textDecoration: 'none',
@@ -31,8 +47,8 @@ const useStyles = makeStyles({
         textAlign: 'center'
     },
     imgs: {
-        width: '120px',
-        height: '120px',
+        width: '160px',
+        height: '160px',
     }
 });
 
@@ -41,7 +57,7 @@ function ProjectCards() {
     const styles = useStyles();
 
     const proj = projectData.map(item => {
-        return (
+            return (
             <Project id={item.id}>
                 <a href={item.web} target="_blank" rel="noopener noreferrer" className={styles.links} >
                     <img src={item.img} alt='img' style={{ maxWidth: '100%' }} className={styles.imgs} />
@@ -55,10 +71,40 @@ function ProjectCards() {
                     {item.desc}
                 </Typography>
             </Project>
+
         );
     });
 
     return proj;
 };
 
+function ResProjectCards(){
+    const styles = useStyles();
+
+    const proj = projectData.map(item => {
+            return (
+            <ResponsiveProject id={item.id}>
+                <a href={item.web} target="_blank" rel="noopener noreferrer" className={styles.links} >
+                    <img src={item.img} alt='img' style={{ maxWidth: '100%' }} className={styles.imgs} />
+                </a>
+                <Typography variant='h4' className={styles.name} >
+                    <a href={item.web} target="_blank" rel="noopener noreferrer" className={styles.links} >
+                        {item.name}
+                    </a>
+                </Typography>
+                <Typography variant='body1' className={styles.resDesc}>
+                    {item.desc}
+                </Typography>
+            </ResponsiveProject>
+
+        );
+    });
+
+    return proj;
+}
+
 export default ProjectCards
+
+export{
+    ResProjectCards
+}

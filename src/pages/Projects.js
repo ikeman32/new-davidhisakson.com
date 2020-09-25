@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
-import { ProjectCards } from './';
+import { ProjectCards, ResProjectCards } from './';
+import Hidden from '@material-ui/core/Hidden';
+import PropTypes from 'prop-types';
 
 const Container = styled(Box)({
     display: 'flex',
@@ -11,12 +13,21 @@ const Container = styled(Box)({
     minHeight: '73vh',
 });
 
-function Projects() {
+function Projects(props) {
     return (
         <Container>
-            <ProjectCards />
+            <Hidden mdDown>
+                <ProjectCards />
+            </Hidden>
+            <Hidden only='lg'>
+                <ResProjectCards />
+            </Hidden>
         </Container>
     )
 }
+
+Projects.propTypes = {
+    width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
+};
 
 export default Projects
