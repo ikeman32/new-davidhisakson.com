@@ -6,6 +6,9 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
 import { Link } from 'react-router-dom';
+import Hidden from '@material-ui/core/Hidden';
+// import withWidth from '@material-ui/core/withWidth';
+import PropTypes from 'prop-types';
 
 import { me } from '../Assets';
 
@@ -27,7 +30,7 @@ const Bar = styled(Box)({
     backgroundColor: '#bbd196',
     color: '#056676',
     paddingtop: '0 8px',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
 });
 
 const Avatars = styled(Box)({
@@ -40,47 +43,88 @@ const Avatars = styled(Box)({
 
 
 
-function Navbar() {
+function Navbar(props) {
+
     return (
         <Navigation>
             <Bar>
-                <Avatars>
-                    <Avatar src={me} />
-                    <h2>David H Isakson II</h2>
-                </Avatars>
-                <MenuList style={{ display: 'flex', width: '40%' }}>
-                    <MenuItem>
-                        <Tooltip title='Home' arrow>
-                            <Link to='/'>
-                                <HomeIcon fontSize='large' />
-                            </Link>
-                        </Tooltip>
-                    </MenuItem>
-                    <MenuItem style={{ marginLeft: '1rem' }}>
-                        <Tooltip title='About Me' arrow>
-                            <Link to='/About'>
-                                <InfoOutlinedIcon fontSize='large' />
-                            </Link>
-                        </Tooltip>
-                    </MenuItem>
-                    <MenuItem style={{ marginLeft: '1rem' }}>
-                        <Tooltip title='Projects' arrow>
-                            <Link to='/Projects'>
-                                <CodeIcon fontSize='large' />
-                            </Link>
-                        </Tooltip>
-                    </MenuItem>
-                    <MenuItem style={{ marginLeft: '1rem' }}>
-                        <Tooltip title='Blog' arrow>
-                            <Link to='/Blog'>
-                                <DescriptionIcon fontSize='large' />
-                            </Link>
-                        </Tooltip>
-                    </MenuItem>
-                </MenuList>
+                <Hidden xsDown>
+                    <Avatars>
+                        <Avatar src={me} />
+                        <h2>David H Isakson II</h2>
+                    </Avatars>
+                </Hidden>
+                <Hidden xsDown>
+                    <MenuList style={{ display: 'flex', width: '40%' }}>
+                        <MenuItem>
+                            <Tooltip title='Home' arrow>
+                                <Link to='/'>
+                                    <HomeIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                        <MenuItem style={{ marginLeft: '1rem' }}>
+                            <Tooltip title='About Me' arrow>
+                                <Link to='/About'>
+                                    <InfoOutlinedIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                        <MenuItem style={{ marginLeft: '1rem' }}>
+                            <Tooltip title='Projects' arrow>
+                                <Link to='/Projects'>
+                                    <CodeIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                        <MenuItem style={{ marginLeft: '1rem' }}>
+                            <Tooltip title='Blog' arrow>
+                                <Link to='/Blog'>
+                                    <DescriptionIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                    </MenuList>
+                </Hidden>
+                <Hidden smUp>
+                    <MenuList style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+                        <MenuItem>
+                            <Tooltip title='Home' arrow>
+                                <Link to='/'>
+                                    <HomeIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                        <MenuItem style={{ marginLeft: '1rem' }}>
+                            <Tooltip title='About Me' arrow>
+                                <Link to='/About'>
+                                    <InfoOutlinedIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                        <MenuItem style={{ marginLeft: '1rem' }}>
+                            <Tooltip title='Projects' arrow>
+                                <Link to='/Projects'>
+                                    <CodeIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                        <MenuItem style={{ marginLeft: '1rem' }}>
+                            <Tooltip title='Blog' arrow>
+                                <Link to='/Blog'>
+                                    <DescriptionIcon fontSize='large' />
+                                </Link>
+                            </Tooltip>
+                        </MenuItem>
+                    </MenuList>
+                </Hidden>
             </Bar>
         </Navigation>
-    )
+    );
+
 }
+Navbar.propTypes = {
+    width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
+};
 
 export default Navbar
