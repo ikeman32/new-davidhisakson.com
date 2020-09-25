@@ -7,6 +7,7 @@ const Container = styled(Box)({
     display: 'flex',
     justifyContent: 'center',
     justifyItems: 'center',
+    overflow: 'auto',
 });
 
 function About() {
