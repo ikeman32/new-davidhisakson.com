@@ -7,7 +7,6 @@ import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
 import { Link } from 'react-router-dom';
 import Hidden from '@material-ui/core/Hidden';
-// import withWidth from '@material-ui/core/withWidth';
 import PropTypes from 'prop-types';
 
 import { me } from '../Assets';
