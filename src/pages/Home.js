@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Box, Tooltip } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import { me } from '../components/Assets'
@@ -141,8 +142,10 @@ function Home(props) {
                             <img src={'https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5dcda59e63bb6ae5c9282801_small-red-logo.png'} style={{ maxWidth: '50%', marginLeft: '1rem' }} alt='' />
                         </a>
                     </Badge>
-                    <InfoOutlinedIcon style={{ marginTop: '1rem', marginLeft: '1rem', color: '#056676' }} fontSize='large' />
-                    <h3 style={{ marginTop: '1rem', marginRight: '6rem', color: '#056676', float: 'right' }}>See my resume</h3>
+                    <Link to='/About'>
+                        <InfoOutlinedIcon style={{ marginTop: '1rem', marginLeft: '1rem', color: '#056676' }} fontSize='large' />
+                        <h3 style={{ marginTop: '1rem', marginRight: '6rem', color: '#056676', float: 'right' }}>See my resume</h3>
+                    </Link>
                 </AboutMe>
             </Hidden>
             <Hidden only='lg'>
@@ -191,8 +194,10 @@ function Home(props) {
                             <img src={'https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5dcda59e63bb6ae5c9282801_small-red-logo.png'} style={{ maxWidth: '50%', marginLeft: '1rem' }} alt='' />
                         </a>
                     </Badge>
-                    <InfoOutlinedIcon style={{ marginTop: '1rem', marginLeft: '1rem', color: '#056676' }} fontSize='large' />
-                    <h3 style={{ marginTop: '1rem', marginRight: '6rem', color: '#056676', float: 'right' }}>See my resume</h3>
+                    <Link to='/About'>
+                        <InfoOutlinedIcon style={{ marginTop: '1rem', marginLeft: '1rem', color: '#056676' }} fontSize='large' />
+                        <h3 style={{ marginTop: '1rem', marginRight: '6rem', color: '#056676', float: 'right' }}>See my resume</h3>
+                    </Link>
                 </ResponsiveAbout>
             </Hidden>
             <Hidden smDown>
